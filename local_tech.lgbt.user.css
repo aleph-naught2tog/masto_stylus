@@ -1,0 +1,209 @@
+/* ==UserStyle==
+@name           tech.lgbt - 11/6/2022, 11:40:27 AM
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+
+/* */
+
+@-moz-document domain("tech.lgbt") {
+  :root {
+    scrollbar-color: unset;
+    --pastel-red: #ff7878;
+    --pasted-red-orange: #ffa888;
+    --pastel-orange: #ffc898;
+    --pastel-yellow: #fff89a;
+    --pastel-rainbow-gradient: linear-gradient(
+      to right,
+      var(--pastel-red),
+      var(--pastel-orange),
+      var(--pastel-yellow),
+      #cdf2ca,
+      #a2cdcd,
+      #d1e8e4,
+      #cab8ff
+    );
+
+    --mastodon-bright-purple-inactive: #595aff;
+    --mastodon-light-purple: #9697ff;
+    --mastodon-purple-radio: #7778ff;
+    --mastodon-bright-purple: #6364ff;
+
+    /*
+      USER THEMEING
+    */
+
+    --theme-semi-transparent-primary: #ff00ff55;
+    --theme-primary-lighter: hotpink;
+    --theme-primary-inactive: violet;
+    --theme-primary-medium: palevioletred;
+    --theme-primary: #ff00ff;
+
+    /* this is for setting the boost button color */
+    --masto-base-hue: 239deg;
+    --boost-target-hue: 330deg;
+
+    --theme-radio-button: var(--theme-primary-medium);
+  }
+
+  /*
+  ==============================================================================
+  COLOR CHANGES
+  ==============================================================================
+  */
+
+  .radio-button__input.checked {
+    border-color: var(--theme-radio-button);
+    background: var(--theme-radio-button);
+  }
+
+  .muted .poll__chart.leading {
+    background: var(--theme-semi-transparent-primary);
+  }
+
+  .button, .admin-wrapper .sidebar ul .simple-navigation-active-leaf a {
+    background: var(--theme-primary-inactive);
+  }
+
+  .column-header.active .column-header__icon,
+  .column-link--transparent.active,
+  .column-header .column-header__back-button,
+  .notification__message .fa,
+  .icon-button.active {
+    color: var(--theme-primary-lighter);
+  }
+
+  .icon-button.active[aria-label='Unboost'] > i.fa-retweet {
+    color: var(--theme-primary-lighter);
+    filter: hue-rotate(calc(var(--boost-target-hue) - var(--masto-base-hue)));
+  }
+
+  /*
+    Background changes from BRIGHT PURPLE
+    these should be your PRIMARY
+  */
+  .poll__chart.leading,
+  .button:hover,
+  .icon-with-badge__badge {
+    background: var(--theme-primary);
+  }
+
+  .status a.status-link,
+  .detailed-status a.status-link,
+  .status__wrapper--filtered__button,
+  .status__content a.mention {
+    /* this allows us to set up coloring later */
+    text-decoration: none;
+    color: var(--theme-primary-lighter);
+  }
+
+  .status a.status-link span,
+  .detailed-status a.status-link,
+  .status__content a.mention span {
+    text-decoration: none;
+    border-bottom: 1.5px solid;
+    border-color: var(--theme-primary-lighter);
+  }
+
+  .column-header button {
+    background: transparent;
+  }
+
+  a.column-link:hover span {
+    padding-bottom: 2px;
+    border-bottom: 3px solid;
+    border-image: var(--pastel-rainbow-gradient) 5;
+  }
+
+  a.status-link:hover {
+    color: #ffa888 !important;
+  }
+
+  a.status-link:hover span {
+    color: unset !important;
+    border-image: var(--pastel-rainbow-gradient) 5;
+  }
+
+  a.column-link:hover i {
+    color: var(--pastel-orange);
+  }
+
+  /*
+      FONT SIZE ADJUSTMENTS
+  */
+  body {
+    /* this handles things lik your username etc */
+    font-size: 14px;
+  }
+
+  .column-link {
+    /* nav links */
+    font-size: 18px;
+  }
+
+  .status__content {
+    /* timeline content */
+    font-size: 16px;
+  }
+
+  .tabs-bar__wrapper {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 5px solid;
+    border-image: var(--pastel-rainbow-gradient) 5;
+  }
+
+  /* highlights  images with no alt-text */
+  img:not([alt]):not([data-src*='assets']):not(#profile_page_avatar):not(.parallax) {
+    border-top: 5px solid red !important;
+  }
+
+  /*
+      DIRECT MESSAGE RELATED STYLES
+  */
+
+  /* changes icon for DM to be a cute little envelope */
+  [title='mentioned people only' i]::before {
+    content: '💌';
+    font-size: 1.1em;
+  }
+
+  /* clearly shows what is a DM and what is not
+      .status__wrapper-direct = a DM interaction in your notifications
+      .conversation = a DM interaction in your DMs
+  */
+  .status__wrapper-direct,
+  .conversation {
+    /* if you need higher contrast for this border, try: #fff */
+    border: 1px dashed #ffffff77;
+    /* TODO: parameterize this
+
+    should match selector:
+    .muted .poll__chart.leading rgba(99,100,255,.2)
+
+    */
+    border-left: 5px solid var(--theme-semi-transparent-primary);
+  }
+
+  .status__wrapper--filtered {
+    background: #1e212a;
+  }
+
+  button.load-more.load-gap {
+    /* maybe box-shadow inset */
+    font-size: 105%;
+    box-shadow: inset 0 0 16px 12px rgba(11, 11, 15, 0.2);
+    background: radial-gradient(
+        ellipse at top,
+        rgba(99, 100, 255, 0.25) 0,
+        rgba(99, 100, 255, 0) 60%
+      ),
+      radial-gradient(
+        ellipse at bottom,
+        rgba(99, 100, 255, 0.25) 0,
+        rgba(99, 100, 255, 0) 60%
+      );
+  }
+}
