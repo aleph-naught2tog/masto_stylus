@@ -238,7 +238,7 @@
   .status__content a.mention,
   .scrollable a {
     text-decoration: none;
-    color: var(--theme-link-color) !important;
+    color: var(--theme-link-color);
   }
 
   .status a.status-link span,
@@ -317,7 +317,7 @@
   ------------------- MAX STYLES -------------------
   */
 
-  /* a.column-link:hover span {
+  a.column-link:hover span {
     padding-bottom: 2px;
     border-bottom: 3px solid;
     border-image: var(--pastel-rainbow-gradient) 5;
@@ -334,23 +334,23 @@
 
   a.column-link:hover i {
     color: var(--pastel-orange);
-  } */
+  }
 
   /*
     cute little rainbow
   */
-  /* .tabs-bar__wrapper {
+  .tabs-bar__wrapper {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     border-bottom: 5px solid;
     border-image: var(--pastel-rainbow-gradient) 5;
-  } */
+  }
 
   /*
       DIRECT MESSAGE RELATED STYLES
   */
 
-  /* [title='mentioned people only' i]::before {
+  [title='mentioned people only' i]::before {
     content: '💌';
     font-size: 1.1em;
   }
@@ -372,5 +372,5 @@
         var(--theme-semi-transparent-accent) 0,
         transparent 60%
       );
-  } */
+  }
 }
