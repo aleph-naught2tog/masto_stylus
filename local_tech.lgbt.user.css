@@ -132,7 +132,7 @@
     background: var(--theme-timeline-background);
   }
 
-  .column__header,
+  .column-header,
   .account-header {
     background: var(--theme-center-column-header-background);
   }
