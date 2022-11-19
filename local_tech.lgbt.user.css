@@ -1,16 +1,16 @@
 /* ==UserStyle==
 @name           tech.lgbt - 11/6/2022, 11:40:27 AM
 @namespace      github.com/openstyles/stylus
+@repository     github.com/aleph-naught2tog/masto_stylus
 @version        1.0.0
 @description    A new userstyle
 @author         Me
 ==/UserStyle== */
 
-/* */
-
 @-moz-document domain("tech.lgbt") {
   :root {
     scrollbar-color: unset;
+
     --pastel-red: #ff7878;
     --pasted-red-orange: #ffa888;
     --pastel-orange: #ffc898;
@@ -50,6 +50,27 @@
 
   /*
   ==============================================================================
+  FONT SIZE ADJUSTMENTS
+  ==============================================================================
+  */
+
+  body {
+    /* this handles things lik your username etc */
+    font-size: 14px;
+  }
+
+  .column-link {
+    /* nav links */
+    font-size: 18px;
+  }
+
+  .status__content {
+    /* timeline content */
+    font-size: 16px;
+  }
+
+  /*
+  ==============================================================================
   COLOR CHANGES
   ==============================================================================
   */
@@ -63,7 +84,8 @@
     background: var(--theme-semi-transparent-primary);
   }
 
-  .button, .admin-wrapper .sidebar ul .simple-navigation-active-leaf a {
+  .button,
+  .admin-wrapper .sidebar ul .simple-navigation-active-leaf a {
     background: var(--theme-primary-inactive);
   }
 
@@ -111,6 +133,9 @@
     background: transparent;
   }
 
+  /*
+  ------------------- MAX STYLES -------------------
+  */
   a.column-link:hover span {
     padding-bottom: 2px;
     border-bottom: 3px solid;
@@ -128,24 +153,6 @@
 
   a.column-link:hover i {
     color: var(--pastel-orange);
-  }
-
-  /*
-      FONT SIZE ADJUSTMENTS
-  */
-  body {
-    /* this handles things lik your username etc */
-    font-size: 14px;
-  }
-
-  .column-link {
-    /* nav links */
-    font-size: 18px;
-  }
-
-  .status__content {
-    /* timeline content */
-    font-size: 16px;
   }
 
   .tabs-bar__wrapper {
@@ -178,12 +185,6 @@
   .conversation {
     /* if you need higher contrast for this border, try: #fff */
     border: 1px dashed #ffffff77;
-    /* TODO: parameterize this
-
-    should match selector:
-    .muted .poll__chart.leading rgba(99,100,255,.2)
-
-    */
     border-left: 5px solid var(--theme-semi-transparent-primary);
   }
 
