@@ -314,6 +314,16 @@
     color: var(--theme-accent-lighter);
   }
 
+
+  .upload-progress {
+    color: var(--theme-text-black);
+  }
+
+  .upload-progress__tracker {
+    background: var(--theme-accent);
+  }
+
+
   /* INPUTS */
 
   .radio-button__input.checked,
@@ -385,6 +395,10 @@
   .button.logo-button,
   .button.logo-button:hover {
     background: var(--theme-accent);
+  }
+
+  .poll__chart {
+    background: var(--theme-semi-transparent-accent);
   }
 
   .button.disabled,
