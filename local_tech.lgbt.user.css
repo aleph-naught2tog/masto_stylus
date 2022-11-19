@@ -78,8 +78,18 @@
     --theme-radio-button: var(--theme-accent-medium);
     --theme-link-color: var(--theme-accent-lighter);
 
-    --theme-page-background: #191b22;
-    --theme-font-color-fallback: lime;
+    --theme-font-color-fallback: #fff;
+
+    --theme-page-background: var(--theme-neutral-darkest);
+    --theme-center-column-header-background: var(--theme-neutral-grim);
+    --theme-search-input-background: var(--theme-neutral-darker);
+    /* The timeline background matches the search input background in the standard UI */
+    --theme-timeline-background: var(--theme-neutral-darker);
+    --theme-timeline-hover: var(--theme-neutral-dark);
+    --theme-compose-background: var(--theme-neutral-brightest);
+    --theme-compose-tools-background: var(--theme-neutral-bright);
+
+    --theme-reply-indicator-background: hsl(215, 29%, 70%);
   }
 
   /*
@@ -114,16 +124,39 @@
     background: var(--theme-page-background);
   }
 
-  /* #282c37  -- .search__input */
-  /* #282c37 -- .column > .scrollable */
-  /* #313543 -- .column__header */
-  /* #2c313d -- .load-more:hover */
-  /* #fff -- .compose-form .autosuggest-textarea__textarea,
-             .spoiler-input__input */
-  /* #ebebeb -- .compose-form .compose-form__buttons-wrapper */
-  /*
-    #9baec8 -- .reply-indicator
-  */
+  .search__input {
+    background: var(--theme-search-input-background);
+  }
+
+  .column > .scrollable {
+    background: var(--theme-timeline-background);
+  }
+
+  .column__header,
+  .account-header {
+    background: var(--theme-center-column-header-background);
+  }
+
+  .load-more:hover {
+    background: var(--theme-timeline-hover);
+  }
+
+  a.status-card.compact:hover {
+    background-color: var(--theme-neutral-grim);
+  }
+
+  .compose-form .autosuggest-textarea__textarea,
+  .spoiler-input__input {
+    background: var(--theme-compose-background);
+  }
+
+  .compose-form .compose-form__buttons-wrapper {
+    background: var(--theme-compose-tools-background);
+  }
+
+  .reply-indicator {
+    background: var(--theme-reply-indicator-background);
+  }
 
   /* TEXT COLORS */
   body {
