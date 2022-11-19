@@ -188,16 +188,17 @@
   /* TEXT COLORS */
   /*
 
-    hsl(224, 16%, 69%);
-    hsl(214, 30%, 82%)
-    hsl(216, 28%, 90%)
-    hsl(210, 27%, 94%)
+    hsl(224, 16%, 69%)
+    hsl(214, 30%, 82%) #c2cede
+    hsl(216, 28%, 90%) #dde3ec
+    hsl(210, 27%, 94%) #ecf0f4
 
     hsl(0, 0%, 100%)
 
     hsl(208, 25%, 88%)
 
   */
+
   body {
     /* Note: this rarely shows up in the UI. Good to set, but won't do much. */
     color: var(--theme-font-color-fallback);
@@ -207,130 +208,68 @@
     color: var(--theme-accent-lightest);
   }
 
+  .compose-form__buttons button,
+  .compose-form__buttons button.icon-button,
   .dropdown-menu__item {
+    filter: unset;
     /* color: black; */
     color: dodgerblue;
   }
 
-  /* things like who boosted */
-  .status__prepend,
-  .status__prepend .status__display-name strong {
-    /* color: #c2cede; */
-    color: lime;
-  }
-
-  .link-footer p,
-  .link-footer p a {
-    /* color: #c2cede; */
-    color: lime;
-  }
-
   .empty-column-indicator,
-  .follow_requests-unlocked_explanation {
-    /* color: #c2cede; */
-    color: lime;
-  }
-
-  .muted .status__content, .muted .status__content a, .muted .status__content p, .muted .status__display-name strong {
-    /* color: #c2cede; */
-    color: lime;
-  }
-
+  .follow_requests-unlocked_explanation,
+  .link-footer p a,
+  .link-footer p,
+  .muted .status__content a,
+  .muted .status__content p,
+  .muted .status__content,
+  .muted .status__display-name strong,
+  .status__prepend .status__display-name strong,
+  .status__prepend,
   .trends__item__name {
-    /* color: #c2cede; */
+    /* darkest other than black */
     color: lime;
   }
 
-  .account__display-name strong,
-  .status__display-name strong {
-    /* color: #fff; */
-    color: yellow;
-  }
-
-  .status__content {
-    /* color: #fff; */
-    color: yellow;
-  }
-
-  .announcements__container {
-    /* color: #fff; */
-    color: yellow;
-  }
-
-  .dismissable-banner__message {
-    /* color: #fff; */
-    color: yellow;
-  }
-
-  .navigation-bar,
-  .getting-started__trends h4,
-  .trends__item__name a {
-    /* color: #dde3ec; */
-    color: forestgreen;
-  }
-
-  .conversation__content__relative-time, .conversation__content__names {
-    /* color: #dde3ec; */
-    color: forestgreen;
-  }
-
-  .column-header__collapsible,
-  .column-settings__section,
-  .column-settings__row span {
-    /* color: #dde3ec; */
-    color: forestgreen;
-  }
-
-  .announcements__pagination {
-    /* color: #dde3ec; */
-    color: forestgreen;
-  }
-
-  .reactions-bar__item__count {
-    /* color: #dde3ec; */
-    color: forestgreen;
-  }
-
-  .notification__message {
-    /* color: #dde3ec; */
-    color: forestgreen;
-  }
-
-  .account .account__display-name {
-    /* color: #dde3ec; */
-    color: forestgreen;
-  }
-
-  .column-header__button,
-  .column-header button {
-    /* color: #dde3ec; */
-    color: forestgreen;
-  }
-
+  .account .account__display-name,
   .account__section-headline a,
   .account__section-headline button,
+  .announcements__pagination,
+  .column-header button,
+  .column-header__button,
+  .column-header__collapsible,
+  .column-settings__row span,
+  .column-settings__section,
+  .conversation__content__names,
+  .conversation__content__relative-time,
+  .getting-started__trends h4,
+  .navigation-bar,
   .notification__filter-bar a,
-  .notification__filter-bar button {
-    /* color: #dde3ec; */
+  .notification__filter-bar button,
+  .notification__message,
+  .reactions-bar__item__count,
+  .trends__item__name a {
+    /* medium */
     color: forestgreen;
   }
 
   .account__section-headline a.active,
   .account__section-headline button.active,
+  .announcements__item__content a,
+  .navigation-bar strong,
   .notification__filter-bar a.active,
   .notification__filter-bar button.active {
-    /* color: #ecf0f4; */
+    /* brightest other than white */
     color: blue;
   }
 
-  .navigation-bar strong {
-    /* color: #ecf0f4; */
-    color: blue;
-  }
-
-  .announcements__item__content a {
-    /* color: #ecf0f4; */
-    color: blue;
+  .account__display-name strong,
+  .announcements__container,
+  .dismissable-banner__message,
+  .status__content,
+  .status__display-name strong {
+    /* white */
+    color: yellow;
   }
 
   .column-link--transparent,
