@@ -156,7 +156,8 @@
     background: var(--theme-compose-tools-background);
   }
 
-  .reply-indicator {
+  .reply-indicator,
+  .compose-form .compose-form__warning {
     background: var(--theme-reply-indicator-background);
   }
 
@@ -187,15 +188,15 @@
 
   /* TEXT COLORS */
   /*
+    black darkgreen
+    hsl(214, 30%, 82%) #c2cede limegreen
+    hsl(208, 25%, 88%) column links... forestgreen
+    hsl(216, 28%, 90%) #dde3ec lime
+    hsl(210, 27%, 94%) #ecf0f4 lightgreen
 
-    hsl(224, 16%, 69%)
-    hsl(214, 30%, 82%) #c2cede
-    hsl(216, 28%, 90%) #dde3ec
-    hsl(210, 27%, 94%) #ecf0f4
+    hsl(0, 0%, 100%) palegreen
 
-    hsl(0, 0%, 100%)
 
-    hsl(208, 25%, 88%)
 
   */
 
@@ -208,12 +209,35 @@
     color: var(--theme-accent-lightest);
   }
 
+  .compose-form .autosuggest-textarea__textarea::placeholder,
+  .compose-form .compose-form__warning,
+  .compose-form .icon-button,
+  .compose-form .spoiler-input__input::placeholder,
   .compose-form__buttons button,
   .compose-form__buttons button.icon-button,
-  .dropdown-menu__item {
+  .compose-form__poll-wrapper .button.button-secondary,
+  .dropdown-menu__item,
+  .language-dropdown__dropdown__results__item__common-name,
+  .reply-indicator__content,
+  .reply-indicator__display-name,
+  .report-dialog-modal__textarea::placeholder {
     filter: unset;
     /* color: black; */
-    color: dodgerblue;
+    color: darkgreen;
+  }
+
+  .character-counter,
+  .compose-form .compose-form__warning a,
+  .reply-indicator__content a {
+    /* color: #1b1e25; */
+    color: darkblue;
+  }
+
+
+  .column-link--transparent,
+  .column-link--transparent:hover {
+    /* color: #d9e1e8; */
+    color: forestgreen;
   }
 
   .empty-column-indicator,
@@ -228,7 +252,7 @@
   .status__prepend,
   .trends__item__name {
     /* darkest other than black */
-    color: lime;
+    color: limegreen;
   }
 
   .account .account__display-name,
@@ -248,9 +272,10 @@
   .notification__filter-bar button,
   .notification__message,
   .reactions-bar__item__count,
+  .status-card__title,
   .trends__item__name a {
     /* medium */
-    color: forestgreen;
+    color: lime;
   }
 
   .account__section-headline a.active,
@@ -260,7 +285,7 @@
   .notification__filter-bar a.active,
   .notification__filter-bar button.active {
     /* brightest other than white */
-    color: blue;
+    color: lightgreen;
   }
 
   .account__display-name strong,
@@ -269,13 +294,7 @@
   .status__content,
   .status__display-name strong {
     /* white */
-    color: yellow;
-  }
-
-  .column-link--transparent,
-  .column-link--transparent:hover {
-    /* color: #d9e1e8; */
-    color: darkviolet;
+    color: palegreen;
   }
 
   .icon-button:not(.active) {
