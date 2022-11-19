@@ -61,6 +61,13 @@
       calc(var(--accent_light) - 5%)
     );
 
+    --theme-neutral-darkest: hsl(227, 15%, 12%);
+    --theme-neutral-darker: hsl(224, 16%, 19%);
+    --theme-neutral-dark: hsl(222, 16%, 21%);
+    --theme-neutral-grim: hsl(227, 16%, 23%);
+    --theme-neutral-bright: hsl(0, 0%, 92%);
+    --theme-neutral-brightest: hsl(0, 0%, 100%);
+
     /*
       this is for setting the boost button color. The "boost target hue" would
       usually be the HUE value of your `theme-accent` color.
