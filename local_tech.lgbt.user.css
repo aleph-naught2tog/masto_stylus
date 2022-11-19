@@ -26,24 +26,26 @@
       #cab8ff
     );
 
-    --mastodon-bright-purple-inactive: #595aff;
-    --mastodon-light-purple: #9697ff;
-    --mastodon-purple-radio: #7778ff;
-    --mastodon-bright-purple: #6364ff;
+    --mastodon-light-purple: #9697ff; /* 239°, 100%, 79% */
+    --mastodon-purple-radio: #7778ff; /* 240°, 100%, 73% */
+    --mastodon-bright-purple: #6364ff; /* 240°, 100%, 69% */
+    --mastodon-bright-purple-inactive: #595aff; /* 240°, 100%, 67% */
 
     /*
       USER THEMEING
     */
 
-    --theme-semi-transparent-primary: #ff00ff55;
-    --theme-primary-lighter: hotpink;
-    --theme-primary-inactive: violet;
-    --theme-primary-medium: palevioletred;
-    --theme-primary: #ff00ff;
+    /* 16°, 100%, 77% */
+
+    --theme-semi-transparent-primary: hsla(16, 100%, 77%, 0.3);
+    --theme-primary-lighter: hsl(16, 100%, 77%);
+    --theme-primary-medium: hsl(16, 100%, 72%);
+    --theme-primary: hsl(16, 100%, 68%);
+    --theme-primary-inactive: hsl(16, 100%, 65%);
 
     /* this is for setting the boost button color */
     --masto-base-hue: 239deg;
-    --boost-target-hue: 330deg;
+    --boost-target-hue: 16deg;
 
     --theme-radio-button: var(--theme-primary-medium);
     --theme-link-color: var(--theme-primary-lighter);
