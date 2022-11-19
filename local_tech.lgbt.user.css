@@ -45,7 +45,7 @@
       var(--accent_sat),
       calc(var(--accent_light) + 10%)
     );
-    --theme-accent-medium:  hsl(
+    --theme-accent-medium: hsl(
       var(--accent_hue),
       var(--accent_sat),
       calc(var(--accent_light) + 5%)
@@ -70,6 +70,9 @@
 
     --theme-radio-button: var(--theme-accent-medium);
     --theme-link-color: var(--theme-accent-lighter);
+
+    --theme-page-background: #191b22;
+    --theme-font-color-fallback: lime;
   }
 
   /*
@@ -99,7 +102,32 @@
   ==============================================================================
   */
 
-  .radio-button__input.checked {
+  /* SECTION BACKGROUNDS */
+  body {
+    background: var(--theme-page-background);
+  }
+
+  /* #282c37  -- .search__input */
+  /* #282c37 -- .column > .scrollable */
+  /* #313543 -- .column__header */
+  /* #2c313d -- .load-more:hover */
+  /* #fff -- .compose-form .autosuggest-textarea__textarea,
+             .spoiler-input__input */
+  /* #ebebeb -- .compose-form .compose-form__buttons-wrapper */
+  /*
+    #9baec8 -- .reply-indicator
+  */
+
+  /* TEXT COLORS */
+  body {
+    /* Note: this rarely shows up in the UI. Good to set, but won't do much. */
+    color: var(--theme-font-color-fallback);
+  }
+
+  /* INPUTS */
+
+  .radio-button__input.checked,
+  .compose-form__sensitive-button .checkbox.active {
     border-color: var(--theme-radio-button);
     background: var(--theme-radio-button);
   }
@@ -107,6 +135,12 @@
   .muted .poll__chart.leading {
     background: var(--theme-semi-transparent-accent);
   }
+
+  .dropdown-menu__item a:active, .dropdown-menu__item a:focus, .dropdown-menu__item a:hover, .dropdown-menu__item button:active, .dropdown-menu__item button:focus, .dropdown-menu__item button:hover {
+    background: var(--theme-accent);
+  }
+
+  /* BUTTONS, LINKS, ETC */
 
   .button,
   .admin-wrapper .sidebar ul .simple-navigation-active-leaf a {
@@ -117,7 +151,10 @@
   .column-link--transparent.active,
   .column-header .column-header__back-button,
   .notification__message .fa,
-  .icon-button.active {
+  .icon-button.active,
+  .icon-button.inverted.active,
+  .text-icon-button.active,
+  .link-button {
     color: var(--theme-accent-lighter);
   }
 
@@ -130,21 +167,27 @@
     filter: hue-rotate(calc(var(--boost-target-hue) - var(--masto-base-hue)));
   }
 
-  /*
-    Background changes from BRIGHT PURPLE
-    these should be your accent
-  */
   .poll__chart.leading,
   .button:hover,
-  .icon-with-badge__badge {
+  .button:focus,
+  .icon-with-badge__badge,
+  .privacy-dropdown__option.active,
+  .privacy-dropdown__option:hover,
+  .privacy-dropdown.active .privacy-dropdown__value.active .icon-button,
+  .language-dropdown__dropdown__results__item.active {
     background: var(--theme-accent);
+  }
+
+  .button.disabled,
+  .button:disabled {
+    background: var(--theme-accent-lighter);
+    opacity: 0.5;
   }
 
   .status a.status-link,
   .detailed-status a.status-link,
   .status__wrapper--filtered__button,
   .status__content a.mention {
-    /* this allows us to set up coloring later */
     text-decoration: none;
     color: var(--theme-link-color);
   }
@@ -157,7 +200,15 @@
     border-color: var(--theme-link-color);
   }
 
-  .column-header button {
+  .column-header button,
+  .block-modal__cancel-button,
+  .confirmation-modal__cancel-button,
+  .confirmation-modal__secondary-button,
+  .mute-modal__cancel-button,
+  .block-modal__cancel-button:hover,
+  .confirmation-modal__cancel-button:hover,
+  .confirmation-modal__secondary-button:hover,
+  .mute-modal__cancel-button:hover {
     background: transparent;
   }
 
@@ -187,8 +238,6 @@
     fill: var(--theme-accent);
   }
 
-
-
   /*================ ADDONS ===========*/
   /* highlights images with no alt-text */
   img:not([alt]):not([data-src*='assets']):not(#profile_page_avatar):not(.parallax) {
@@ -202,9 +251,6 @@
     border: 1px dashed #ffffff77;
     border-left: 5px solid var(--theme-semi-transparent-accent);
   }
-
-
-
 
   /*
   ------------------- MAX STYLES -------------------
