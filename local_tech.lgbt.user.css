@@ -62,11 +62,11 @@
       calc(var(--accent_light) - 5%)
     );
 
-    --theme-neutral-darkest: hsl(227, 15%, 12%);
-    --theme-neutral-ultra-dark: hsl(227, 15%, 15%);
-    --theme-neutral-darker: hsl(224, 16%, 19%);
-    --theme-neutral-dark: hsl(222, 16%, 21%);
-    --theme-neutral-grim: hsl(227, 16%, 23%);
+    --theme-neutral-darkest: hsl(280, 15%, 12%);
+    --theme-neutral-ultra-dark: hsl(240, 15%, 15%);
+    --theme-neutral-darker: hsl(240, 16%, 19%);
+    --theme-neutral-dark: hsl(240, 16%, 21%);
+    --theme-neutral-grim: hsl(300, 16%, 23%);
     --theme-neutral-bright: hsl(0, 0%, 92%);
     --theme-neutral-brightest: hsl(0, 0%, 100%);
 
@@ -93,11 +93,11 @@
 
     --theme-reply-indicator-background: hsl(215, 29%, 70%);
 
-    --theme-text-black: hsl(28, 15%, 83%);
+    --theme-text-black: hsl(28, 15%, 13%);
     --theme-text-light: hsl(28, 15%, 89%);
     --theme-text-lighter: hsl(28, 15%, 92%);
     --theme-text-lightest: hsl(28, 15%, 95%);
-    --theme-text-white: #fff;
+    --theme-text-white: whitesmoke;
   }
 
   /*
@@ -477,6 +477,15 @@
   ------------------- MAX STYLES -------------------
   */
 
+  /*
+    overriding width above
+  */
+  .status a.status-link span,
+  .detailed-status a.status-link,
+  .status__content a.mention span {
+    border-width: 2px;
+  }
+
   a.column-link:hover span {
     padding-bottom: 2px;
     border-bottom: 3px solid;
@@ -484,7 +493,8 @@
   }
 
   a.status-link:hover {
-    color: #ffa888;
+    /* color: #ffa888; */
+    color: #cab8ff;
   }
 
   a.status-link:hover span {
@@ -493,7 +503,12 @@
   }
 
   a.column-link:hover i {
-    color: var(--pastel-orange);
+    /* color: var(--pastel-orange); */
+    color: #cab8ff;
+  }
+
+  .column-link--transparent.active {
+    font-weight: 800;
   }
 
   /*
