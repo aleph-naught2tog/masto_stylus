@@ -239,6 +239,18 @@
   }
 
   /*
+    sparklines that appear on explore page
+  */
+  .trends__item__sparkline path:first-child {
+    fill: var(--theme-semi-transparent-accent) !important;
+  }
+
+  .trends__item__sparkline path:last-child {
+    stroke: var(--theme-accent-lighter) !important;
+  }
+
+
+  /*
   elephant!
   */
   #logo-symbol-wordmark > path:not([fill='currentColor']) {
