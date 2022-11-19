@@ -26,29 +26,50 @@
       #cab8ff
     );
 
-    --mastodon-light-purple: #9697ff; /* 239°, 100%, 79% */
-    --mastodon-purple-radio: #7778ff; /* 240°, 100%, 73% */
-    --mastodon-bright-purple: #6364ff; /* 240°, 100%, 69% */
-    --mastodon-bright-purple-inactive: #595aff; /* 240°, 100%, 67% */
-
     /*
       USER THEMEING
     */
+    /* hsl(339, 100%, 48%) */
+    --accent_hue: 339deg;
+    --accent_sat: 100%;
+    --accent_light: 48%;
 
-    /* 16°, 100%, 77% */
+    --theme-semi-transparent-accent: hsla(
+      var(--accent_hue),
+      var(--accent_sat),
+      var(--accent_light),
+      0.3
+    );
+    --theme-accent-lighter: hsl(
+      var(--accent_hue),
+      var(--accent_sat),
+      calc(var(--accent_light) + 10%)
+    );
+    --theme-accent-medium:  hsl(
+      var(--accent_hue),
+      var(--accent_sat),
+      calc(var(--accent_light) + 5%)
+    );
+    --theme-accent: hsl(
+      var(--accent_hue),
+      var(--accent_sat),
+      var(--accent_light)
+    );
+    --theme-accent-inactive: hsl(
+      var(--accent_hue),
+      var(--accent_sat),
+      calc(var(--accent_light) - 5%)
+    );
 
-    --theme-semi-transparent-primary: hsla(16, 100%, 77%, 0.3);
-    --theme-primary-lighter: hsl(16, 100%, 77%);
-    --theme-primary-medium: hsl(16, 100%, 72%);
-    --theme-primary: hsl(16, 100%, 68%);
-    --theme-primary-inactive: hsl(16, 100%, 65%);
-
-    /* this is for setting the boost button color */
+    /*
+      this is for setting the boost button color. The "boost target hue" would
+      usually be the HUE value of your `theme-accent` color.
+    */
     --masto-base-hue: 239deg;
-    --boost-target-hue: 16deg;
+    --boost-target-hue: var(--accent_hue);
 
-    --theme-radio-button: var(--theme-primary-medium);
-    --theme-link-color: var(--theme-primary-lighter);
+    --theme-radio-button: var(--theme-accent-medium);
+    --theme-link-color: var(--theme-accent-lighter);
   }
 
   /*
@@ -58,7 +79,7 @@
   */
 
   body {
-    /* this handles things lik your username etc */
+    /* this handles things like your username etc */
     font-size: 14px;
   }
 
@@ -84,12 +105,12 @@
   }
 
   .muted .poll__chart.leading {
-    background: var(--theme-semi-transparent-primary);
+    background: var(--theme-semi-transparent-accent);
   }
 
   .button,
   .admin-wrapper .sidebar ul .simple-navigation-active-leaf a {
-    background: var(--theme-primary-inactive);
+    background: var(--theme-accent-inactive);
   }
 
   .column-header.active .column-header__icon,
@@ -97,22 +118,26 @@
   .column-header .column-header__back-button,
   .notification__message .fa,
   .icon-button.active {
-    color: var(--theme-primary-lighter);
+    color: var(--theme-accent-lighter);
+  }
+
+  .column-header.active .column-header__icon {
+    text-shadow: 0 0 10px var(--theme-semi-transparent-accent);
   }
 
   .icon-button.active[aria-label='Unboost'] > i.fa-retweet {
-    color: var(--theme-primary-lighter);
+    color: var(--theme-accent-lighter);
     filter: hue-rotate(calc(var(--boost-target-hue) - var(--masto-base-hue)));
   }
 
   /*
     Background changes from BRIGHT PURPLE
-    these should be your PRIMARY
+    these should be your accent
   */
   .poll__chart.leading,
   .button:hover,
   .icon-with-badge__badge {
-    background: var(--theme-primary);
+    background: var(--theme-accent);
   }
 
   .status a.status-link,
@@ -144,13 +169,13 @@
     This is the glow above the header when there are new posts.
   */
   .column-header__wrapper.active {
-    box-shadow: 0 1px 0 var(--theme-semi-transparent-primary);
+    box-shadow: 0 1px 0 var(--theme-semi-transparent-accent);
   }
 
   .column-header__wrapper.active::before {
     background: radial-gradient(
       ellipse,
-      var(--theme-semi-transparent-primary) 0,
+      var(--theme-semi-transparent-accent) 0,
       transparent 60%
     );
   }
@@ -158,9 +183,11 @@
   /*
   elephant!
   */
-  #logo-symbol-wordmark > path:not([fill="currentColor"]) {
-    fill: var(--theme-primary);
+  #logo-symbol-wordmark > path:not([fill='currentColor']) {
+    fill: var(--theme-accent);
   }
+
+
 
   /*================ ADDONS ===========*/
   /* highlights images with no alt-text */
@@ -173,8 +200,11 @@
   .conversation {
     /* if you need higher contrast for this border, try: #fff */
     border: 1px dashed #ffffff77;
-    border-left: 5px solid var(--theme-semi-transparent-primary);
+    border-left: 5px solid var(--theme-semi-transparent-accent);
   }
+
+
+
 
   /*
   ------------------- MAX STYLES -------------------
@@ -227,12 +257,12 @@
     box-shadow: inset 0 0 16px 12px rgba(11, 11, 15, 0.2);
     background: radial-gradient(
         ellipse at top,
-        var(--theme-semi-transparent-primary) 0,
+        var(--theme-semi-transparent-accent) 0,
         transparent 60%
       ),
       radial-gradient(
         ellipse at bottom,
-        var(--theme-semi-transparent-primary) 0,
+        var(--theme-semi-transparent-accent) 0,
         transparent 60%
       );
   } */
