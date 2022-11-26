@@ -16,22 +16,26 @@
     --pasted-red-orange: #ffa888;
     --pastel-orange: #ffc898;
     --pastel-yellow: #fff89a;
+    --pastel-green: #cdf2ca;
+    --pastel-blue: #a2cdcd;
+    --pastel-teal: #d1e8e4;
+    --pastel-purple: #cab8ff;
+
     --pastel-rainbow-gradient: linear-gradient(
       to right,
       var(--pastel-red),
       var(--pastel-orange),
       var(--pastel-yellow),
-      #cdf2ca,
-      #a2cdcd,
-      #d1e8e4,
-      #cab8ff
+      var(--pastel-green),
+      var(--pastel-blue),
+      var(--pastel-teal),
+      var(--pastel-purple)
     );
   }
 
   .loading-bar {
     background: var(--pastel-rainbow-gradient);
   }
-
 
   /*
     overriding width above
@@ -49,7 +53,7 @@
   }
 
   a.status-link:hover {
-    color: #cab8ff;
+    color: var(--pastel-purple);
   }
 
   a.status-link:hover span {
@@ -58,7 +62,7 @@
   }
 
   a.column-link:hover i {
-    color: #cab8ff;
+    color: var(--pastel-purple);
   }
 
   .column-link--transparent.active {
