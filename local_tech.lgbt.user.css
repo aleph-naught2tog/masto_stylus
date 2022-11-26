@@ -1,5 +1,5 @@
 /* ==UserStyle==
-@name           tech.lgbt - 11/6/2022, 11:40:27 AM
+@name           Customizable Tech.lgbt - 11/6/2022, 11:40:27 AM
 @namespace      github.com/openstyles/stylus
 @repository     github.com/aleph-naught2tog/masto_stylus
 @version        1.0.0
@@ -10,21 +10,6 @@
 @-moz-document domain("tech.lgbt") {
   :root {
     scrollbar-color: unset;
-
-    --pastel-red: #ff7878;
-    --pasted-red-orange: #ffa888;
-    --pastel-orange: #ffc898;
-    --pastel-yellow: #fff89a;
-    --pastel-rainbow-gradient: linear-gradient(
-      to right,
-      var(--pastel-red),
-      var(--pastel-orange),
-      var(--pastel-yellow),
-      #cdf2ca,
-      #a2cdcd,
-      #d1e8e4,
-      #cab8ff
-    );
 
     /*
       USER THEMEING
