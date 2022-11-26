@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "postcss styles/**/*.user.css --base styles --dir build --watch",
+    "build": "postcss styles/**/*.user.css --base styles --dir build"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.19",
+    "postcss-cli": "^10.0.0",
+    "postcss-nested": "^6.0.0"
+  }
+}

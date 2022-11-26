@@ -1,0 +1,492 @@
+/* ==UserStyle==
+@name           Customizable Tech.lgbt - 11/6/2022, 11:40:27 AM
+@namespace      github.com/openstyles/stylus
+@repository     github.com/aleph-naught2tog/masto_stylus
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+
+@-moz-document domain("tech.lgbt") {
+  :root {
+    scrollbar-color: unset;
+
+    /*
+      USER THEMEING
+    */
+    /* hsl(0, 100%, 74%) */
+    --accent_hue: 0deg;
+    --accent_sat: 100%;
+    --accent_light: 73%;
+
+    --theme-accent-lightest: hsl(var(--accent_hue), var(--accent_sat), 90%);
+    --theme-semi-transparent-accent: hsla(
+      var(--accent_hue),
+      var(--accent_sat),
+      var(--accent_light),
+      0.3
+    );
+    --theme-accent-lighter: hsl(
+      var(--accent_hue),
+      var(--accent_sat),
+      calc(var(--accent_light) + 10%)
+    );
+    --theme-accent-medium: hsl(
+      var(--accent_hue),
+      var(--accent_sat),
+      calc(var(--accent_light) + 5%)
+    );
+    --theme-accent: hsl(
+      var(--accent_hue),
+      var(--accent_sat),
+      var(--accent_light)
+    );
+    --theme-accent-inactive: hsl(
+      var(--accent_hue),
+      var(--accent_sat),
+      calc(var(--accent_light) - 5%)
+    );
+
+    --theme-neutral-darkest: hsl(280, 15%, 12%);
+    --theme-neutral-ultra-dark: hsl(240, 15%, 15%);
+    --theme-neutral-darker: hsl(240, 16%, 19%);
+    --theme-neutral-dark: hsl(240, 16%, 21%);
+    --theme-neutral-grim: hsl(300, 16%, 23%);
+    --theme-neutral-bright: hsl(0, 0%, 92%);
+    --theme-neutral-brightest: hsl(0, 0%, 100%);
+
+    /*
+      this is for setting the boost button color. The "boost target hue" would
+      usually be the HUE value of your `theme-accent` color.
+    */
+    --masto-base-hue: 239deg;
+    --boost-target-hue: var(--accent_hue);
+
+    --theme-radio-button: var(--theme-accent-medium);
+    --theme-link-color: var(--theme-accent-lighter);
+
+    --theme-font-color-fallback: #fff;
+
+    --theme-page-background: var(--theme-neutral-darkest);
+    --theme-center-column-header-background: var(--theme-neutral-grim);
+    --theme-search-input-background: var(--theme-neutral-darker);
+    /* The timeline background matches the search input background in the standard UI */
+    --theme-timeline-background: var(--theme-neutral-darker);
+    --theme-timeline-hover: var(--theme-neutral-dark);
+    --theme-compose-background: var(--theme-neutral-brightest);
+    --theme-compose-tools-background: var(--theme-neutral-bright);
+
+    --theme-reply-indicator-background: hsl(215, 29%, 70%);
+
+    /*
+      Default text colors
+
+    --theme-text-black: black;
+    --theme-text-light: hsl(208, 25%, 88%);
+    --theme-text-lighter: hsl(216, 28%, 90%);
+    --theme-text-lightest: hsl(210, 27%, 94%);
+    --theme-text-white: white;
+  */
+
+    --theme-text-black: hsl(28, 15%, 13%);
+    --theme-text-light: hsl(28, 15%, 89%);
+    --theme-text-lighter: hsl(28, 15%, 92%);
+    --theme-text-lightest: hsl(28, 15%, 95%);
+    --theme-text-white: whitesmoke;
+  }
+
+  /*
+  ==============================================================================
+  FONT SIZE ADJUSTMENTS
+  ==============================================================================
+  */
+
+  body {
+    /* this handles things like your username etc */
+    font-size: 14px;
+  }
+
+  .column-link {
+    /* nav links */
+    font-size: 18px;
+  }
+
+  .status__content {
+    /* timeline content */
+    font-size: 16px;
+  }
+
+  /*
+  ==============================================================================
+  COLOR CHANGES
+  ==============================================================================
+  */
+  .loading-bar {
+    background: var(--theme-accent);
+  }
+
+  /* SECTION BACKGROUNDS */
+  body {
+    background: var(--theme-page-background);
+  }
+
+  .search__input {
+    background: var(--theme-search-input-background);
+  }
+
+  .column > .scrollable {
+    background: var(--theme-timeline-background);
+  }
+
+  .column-header,
+  .account-header {
+    background: var(--theme-center-column-header-background);
+  }
+
+  .column-header__collapsible-inner {
+    background: var(--theme-neutral-dark);
+  }
+
+  .column-header__button.active,
+  .column-header__button.active:hover {
+    background: var(--theme-neutral-dark);
+  }
+
+  .load-more:hover {
+    background: var(--theme-timeline-hover);
+  }
+
+  a.status-card.compact:hover {
+    background-color: var(--theme-neutral-grim);
+  }
+
+  .compose-form .autosuggest-textarea__textarea,
+  .spoiler-input__input {
+    background: var(--theme-compose-background);
+  }
+
+  .compose-form .compose-form__buttons-wrapper {
+    background: var(--theme-compose-tools-background);
+  }
+
+  .reply-indicator,
+  .compose-form .compose-form__warning {
+    background: var(--theme-reply-indicator-background);
+  }
+
+  .reply-indicator__content .status__content__spoiler-link,
+  .status__content .status__content__spoiler-link {
+    background: var(--theme-accent-lighter);
+  }
+
+  .reply-indicator__content .status__content__spoiler-link:focus,
+  .reply-indicator__content .status__content__spoiler-link:hover,
+  .status__content .status__content__spoiler-link:focus,
+  .status__content .status__content__spoiler-link:hover {
+    background: var(--theme-accent-lightest);
+  }
+
+  .dropdown-menu,
+  .dropdown-menu__item a,
+  .dropdown-menu__item button {
+    background: var(--theme-neutral-bright);
+  }
+
+  .notification__filter-bar {
+    background: var(--theme-neutral-ultra-dark);
+  }
+
+  .emoji-mart-anchor-bar {
+    background: var(--theme-accent-lighter);
+  }
+
+  /* TEXT COLORS */
+
+  body {
+    /* Note: this rarely shows up in the UI. Good to set, but won't do much. */
+    color: var(--theme-font-color-fallback);
+  }
+
+  .load-more {
+    color: var(--theme-accent-lightest);
+  }
+
+  .compose-form .autosuggest-textarea__textarea::placeholder,
+  .compose-form .compose-form__warning,
+  .compose-form .icon-button,
+  .compose-form .spoiler-input__input::placeholder,
+  .compose-form__buttons button,
+  .compose-form__buttons button.icon-button,
+  .compose-form__poll-wrapper .button.button-secondary,
+  .dropdown-menu__item,
+  .language-dropdown__dropdown__results__item__common-name,
+  .reply-indicator__content,
+  .reply-indicator__display-name,
+  .report-dialog-modal__textarea::placeholder {
+    filter: unset;
+    /* color: black; */
+    color: var(--theme-text-black);
+  }
+
+  .character-counter,
+  .compose-form .compose-form__warning a,
+  .reply-indicator__content a {
+    /* color: #1b1e25; */
+    color: var(--theme-text-black);
+  }
+
+  .column-link--transparent,
+  .column-link--transparent:hover {
+    /* color: #d9e1e8; */
+    color: var(--theme-text-light);
+  }
+
+  .empty-column-indicator,
+  .follow_requests-unlocked_explanation,
+  .link-footer p a,
+  .link-footer p,
+  .muted .status__content a,
+  .muted .status__content p,
+  .muted .status__content,
+  .muted .status__display-name strong,
+  .status__prepend .status__display-name strong,
+  .status__prepend,
+  .trends__item__name {
+    /* darkest other than black */
+    color: var(--theme-text-light);
+  }
+
+  .account .account__display-name,
+  .account__section-headline a,
+  .account__section-headline button,
+  .announcements__pagination,
+  .column-header button,
+  .column-header__button,
+  .column-header__collapsible,
+  .column-settings__row span,
+  .column-settings__section,
+  .conversation__content__names,
+  .conversation__content__relative-time,
+  .getting-started__trends h4,
+  .navigation-bar,
+  .notification__filter-bar a,
+  .notification__filter-bar button,
+  .notification__message,
+  .reactions-bar__item__count,
+  .status-card__title,
+  .trends__item__name a
+   {
+    /* medium */
+    color: var(--theme-text-lighter);
+  }
+
+  .account__section-headline a.active,
+  .account__section-headline button.active,
+  .announcements__item__content a,
+  .navigation-bar strong,
+  .notification__filter-bar a.active,
+  .notification__filter-bar button.active {
+    /* brightest other than white */
+    color: var(--theme-accent);
+  }
+
+  .account__display-name strong,
+  .announcements__container,
+  .dismissable-banner__message,
+  .status__content,
+  .status__display-name strong {
+    /* white */
+    color: var(--theme-text-white);
+  }
+
+  .icon-button:not(.active) {
+    /* color: hsl(224, 16%, 69%); */
+    filter: saturate(0);
+  }
+
+  .emoji-mart-anchor-selected,
+  .emoji-mart-anchor-selected:hover {
+    /* color: #9697ff; */
+    color: var(--theme-accent-lighter);
+  }
+
+  .upload-progress {
+    color: var(--theme-text-black);
+  }
+
+  .upload-progress__tracker {
+    background: var(--theme-accent);
+  }
+
+  /* INPUTS */
+
+  .radio-button__input.checked,
+  .compose-form__sensitive-button .checkbox.active {
+    border-color: var(--theme-radio-button);
+    background: var(--theme-radio-button);
+  }
+
+  .muted .poll__chart.leading {
+    background: var(--theme-semi-transparent-accent);
+  }
+
+  .dropdown-menu__item a:active,
+  .dropdown-menu__item a:focus,
+  .dropdown-menu__item a:hover,
+  .dropdown-menu__item button:active,
+  .dropdown-menu__item button:focus,
+  .dropdown-menu__item button:hover {
+    background: var(--theme-accent);
+  }
+
+  .react-toggle--checked .react-toggle-track,
+  .react-toggle--checked:is(:hover, :focus-within):not(.react-toggle--disabled)
+    .react-toggle-track {
+    background-color: var(--theme-accent-medium);
+  }
+
+  .react-toggle--checked .react-toggle-thumb {
+    border-color: var(--theme-accent);
+  }
+
+  /* BUTTONS, LINKS, ETC */
+
+  .button,
+  .admin-wrapper .sidebar ul .simple-navigation-active-leaf a {
+    background: var(--theme-accent-inactive);
+  }
+
+  .column-header.active .column-header__icon,
+  .column-link--transparent.active,
+  .column-header .column-header__back-button,
+  .column-back-button,
+  .notification__message .fa,
+  .icon-button.active,
+  .icon-button.inverted.active,
+  .text-icon-button.active,
+  .link-button {
+    color: var(--theme-accent-lighter);
+  }
+
+  .status__content__read-more-button {
+    color: var(--theme-accent-lighter);
+  }
+
+  .column-header.active .column-header__icon {
+    text-shadow: 0 0 10px var(--theme-semi-transparent-accent);
+  }
+
+  .icon-button.active[aria-label='Unboost'] > i.fa-retweet {
+    color: var(--theme-accent-lighter);
+    filter: hue-rotate(calc(var(--boost-target-hue) - var(--masto-base-hue)));
+  }
+
+  .poll__chart.leading,
+  .button:hover,
+  .button:focus,
+  .icon-with-badge__badge,
+  .privacy-dropdown__option.active,
+  .privacy-dropdown__option.active:hover,
+  .privacy-dropdown__option:hover,
+  .privacy-dropdown.active .privacy-dropdown__value.active .icon-button,
+  .language-dropdown__dropdown__results__item.active,
+  .button.logo-button,
+  .button.logo-button:hover {
+    background: var(--theme-accent);
+  }
+
+  .poll__chart {
+    background: var(--theme-semi-transparent-accent);
+  }
+
+  .button.disabled,
+  .button:disabled {
+    background: var(--theme-accent-lighter);
+    opacity: 0.5;
+  }
+
+  .status a.status-link,
+  .detailed-status a.status-link,
+  .status__wrapper--filtered__button,
+  .status__content a.mention,
+  .scrollable a {
+    text-decoration: none;
+    color: var(--theme-link-color);
+  }
+
+  .status a.status-link span,
+  .detailed-status a.status-link,
+  .status__content a.mention span {
+    text-decoration: none;
+    border-bottom: 1.5px solid;
+    border-color: var(--theme-link-color);
+  }
+
+  .status__content p:last-child {
+    /* handle thin last line */
+    margin-bottom: 2px;
+  }
+
+  .column-header button,
+  .block-modal__cancel-button,
+  .confirmation-modal__cancel-button,
+  .confirmation-modal__secondary-button,
+  .mute-modal__cancel-button,
+  .block-modal__cancel-button:hover,
+  .confirmation-modal__cancel-button:hover,
+  .confirmation-modal__secondary-button:hover,
+  .mute-modal__cancel-button:hover {
+    background: transparent;
+  }
+
+  /*
+  DETAILS
+  */
+
+  /*
+    This is the glow above the header when there are new posts.
+  */
+  .column-header__wrapper.active {
+    box-shadow: 0 1px 0 var(--theme-semi-transparent-accent);
+  }
+
+  .column-header__wrapper.active::before {
+    background: radial-gradient(
+      ellipse,
+      var(--theme-semi-transparent-accent) 0,
+      transparent 60%
+    );
+  }
+
+  /*
+    sparklines that appear on explore page
+  */
+  .trends__item__sparkline path:first-child {
+    fill: var(--theme-semi-transparent-accent) !important;
+  }
+
+  .trends__item__sparkline path:last-child {
+    stroke: var(--theme-accent-lighter) !important;
+  }
+
+  /*
+  elephant!
+  */
+  #logo-symbol-wordmark > path:not([fill='currentColor']) {
+    fill: var(--theme-accent);
+  }
+
+  /*================ ADDONS ===========*/
+  /* highlights images with no alt-text */
+  img:not([alt]):not([data-src*='assets']):not(#profile_page_avatar):not(.parallax) {
+    border-top: 5px solid red !important;
+  }
+
+  /* clearly shows what is a DM and what is not */
+  .status__wrapper-direct,
+  .conversation {
+    /* if you need higher contrast for this border, try: #fff */
+    border: 1px dashed #ffffff77;
+    border-left: 5px solid var(--theme-semi-transparent-accent);
+  }
+}
