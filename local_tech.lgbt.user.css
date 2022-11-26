@@ -1,5 +1,5 @@
 /* ==UserStyle==
-@name           tech.lgbt - 11/6/2022, 11:40:27 AM
+@name           Customizable Tech.lgbt - 11/6/2022, 11:40:27 AM
 @namespace      github.com/openstyles/stylus
 @repository     github.com/aleph-naught2tog/masto_stylus
 @version        1.0.0
@@ -10,21 +10,6 @@
 @-moz-document domain("tech.lgbt") {
   :root {
     scrollbar-color: unset;
-
-    --pastel-red: #ff7878;
-    --pasted-red-orange: #ffa888;
-    --pastel-orange: #ffc898;
-    --pastel-yellow: #fff89a;
-    --pastel-rainbow-gradient: linear-gradient(
-      to right,
-      var(--pastel-red),
-      var(--pastel-orange),
-      var(--pastel-yellow),
-      #cdf2ca,
-      #a2cdcd,
-      #d1e8e4,
-      #cab8ff
-    );
 
     /*
       USER THEMEING
@@ -137,7 +122,7 @@
   ==============================================================================
   */
   .loading-bar {
-    background: var(--pastel-rainbow-gradient);
+    background: var(--theme-accent);
   }
 
   /* SECTION BACKGROUNDS */
@@ -289,7 +274,8 @@
   .notification__message,
   .reactions-bar__item__count,
   .status-card__title,
-  .trends__item__name a {
+  .trends__item__name a
+   {
     /* medium */
     color: var(--theme-text-lighter);
   }
@@ -382,6 +368,10 @@
     color: var(--theme-accent-lighter);
   }
 
+  .status__content__read-more-button {
+    color: var(--theme-accent-lighter);
+  }
+
   .column-header.active .column-header__icon {
     text-shadow: 0 0 10px var(--theme-semi-transparent-accent);
   }
@@ -432,8 +422,9 @@
     border-color: var(--theme-link-color);
   }
 
-  .reply-indicator__content p:last-child, .status__content p:last-child {
+  .status__content p:last-child {
     /* handle thin last line */
+    margin-bottom: 2px;
   }
 
   .column-header button,
@@ -497,131 +488,5 @@
     /* if you need higher contrast for this border, try: #fff */
     border: 1px dashed #ffffff77;
     border-left: 5px solid var(--theme-semi-transparent-accent);
-  }
-
-  /*
-  ------------------- MAX STYLES -------------------
-  */
-
-  /*
-    overriding width above
-  */
-  .status a.status-link span,
-  .detailed-status a.status-link,
-  .status__content a.mention span {
-    border-width: 2px;
-  }
-
-  a.column-link:hover span {
-    padding-bottom: 2px;
-    border-bottom: 3px solid;
-    border-image: var(--pastel-rainbow-gradient) 5;
-  }
-
-  a.status-link:hover {
-    color: #cab8ff;
-  }
-
-  a.status-link:hover span {
-    color: var(--theme-link-color);
-    border-image: var(--pastel-rainbow-gradient) 5;
-  }
-
-  a.column-link:hover i {
-    color: #cab8ff;
-  }
-
-  .column-link--transparent.active {
-    font-weight: 800;
-  }
-
-  /*
-    cute little rainbow
-  */
-  .tabs-bar__wrapper {
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    border-bottom: 5px solid;
-    border-image: var(--pastel-rainbow-gradient) 5;
-  }
-
-  /*
-      DIRECT MESSAGE RELATED STYLES
-  */
-
-  [title='mentioned people only' i]::before {
-    content: '💌';
-    font-size: 1.1em;
-  }
-
-  .status__wrapper--filtered {
-    background: #1e212a;
-  }
-
-  button.load-more.load-gap {
-    font-size: 105%;
-    box-shadow: inset 0 0 16px 12px rgba(11, 11, 15, 0.2);
-    background: radial-gradient(
-        ellipse at top,
-        var(--theme-semi-transparent-accent) 0,
-        transparent 60%
-      ),
-      radial-gradient(
-        ellipse at bottom,
-        var(--theme-semi-transparent-accent) 0,
-        transparent 60%
-      );
-  }
-
-  .notification__filter-bar button {
-    font-size: 16px;
-  }
-
-  /* compose button tweaks */
-  @supports selector(:has(a, b)) {
-    /* default button */
-    .compose-form__publish-button-wrapper > button {
-      font-size: 0;
-      line-height: 0;
-    }
-
-    .compose-form__publish-button-wrapper > button > span > i {
-      font-size: initial;
-      line-height: initial;
-      padding-right: 1ex;
-    }
-
-    /* Change the default text to be Toot! */
-    .compose-form__publish-button-wrapper > button::after {
-      content: 'Toot!';
-      display: inline-block;
-      font-size: initial;
-      line-height: initial;
-    }
-
-    /* TODO: is there a way to do this without the `has`? */
-    .compose-form__buttons-wrapper:has(i[class*='fa-at'])
-      + .compose-form__publish
-      > .compose-form__publish-button-wrapper
-      > button::after {
-      /* internal icon: fa-lock */
-      content: 'Direct Toot!';
-    }
-
-    .compose-form__buttons-wrapper:has(i[class*='fa-lock'])
-      + .compose-form__publish
-      > .compose-form__publish-button-wrapper
-      > button::after {
-      /* internal icon: fa-lock */
-      content: 'Locked Toot!';
-    }
-
-    .compose-form__buttons-wrapper:has(i[class*='fa-unlock'])
-      + .compose-form__publish
-      > .compose-form__publish-button-wrapper
-      > button::after {
-      /* internal icon: none */
-      content: 'Unlisted Toot!';
-    }
   }
 }
