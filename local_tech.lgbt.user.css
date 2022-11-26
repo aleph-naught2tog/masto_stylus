@@ -93,6 +93,16 @@
 
     --theme-reply-indicator-background: hsl(215, 29%, 70%);
 
+    /*
+      Default text colors
+
+    --theme-text-black: black;
+    --theme-text-light: hsl(208, 25%, 88%);
+    --theme-text-lighter: hsl(216, 28%, 90%);
+    --theme-text-lightest: hsl(210, 27%, 94%);
+    --theme-text-white: white;
+  */
+
     --theme-text-black: hsl(28, 15%, 13%);
     --theme-text-light: hsl(28, 15%, 89%);
     --theme-text-lighter: hsl(28, 15%, 92%);
@@ -181,7 +191,6 @@
 
   .reply-indicator__content .status__content__spoiler-link,
   .status__content .status__content__spoiler-link {
-    /* background: #a2a9bc; */
     background: var(--theme-accent-lighter);
   }
 
@@ -193,13 +202,11 @@
   }
 
   .dropdown-menu {
-    /* background: #d9e1e8; */
     background: burlywood;
   }
 
   .dropdown-menu__item a,
   .dropdown-menu__item button {
-    /* background: #d9e1e8; */
     background: burlywood;
   }
 
@@ -212,18 +219,6 @@
   }
 
   /* TEXT COLORS */
-  /*
-    black darkgreen
-    hsl(214, 30%, 82%) #c2cede limegreen
-    hsl(208, 25%, 88%) column links... forestgreen
-    hsl(216, 28%, 90%) #dde3ec lime
-    hsl(210, 27%, 94%) #ecf0f4 lightgreen
-
-    hsl(0, 0%, 100%) palegreen
-
-
-
-  */
 
   body {
     /* Note: this rarely shows up in the UI. Good to set, but won't do much. */
@@ -257,7 +252,6 @@
     /* color: #1b1e25; */
     color: var(--theme-text-black);
   }
-
 
   .column-link--transparent,
   .column-link--transparent:hover {
@@ -333,7 +327,6 @@
     color: var(--theme-accent-lighter);
   }
 
-
   .upload-progress {
     color: var(--theme-text-black);
   }
@@ -341,7 +334,6 @@
   .upload-progress__tracker {
     background: var(--theme-accent);
   }
-
 
   /* INPUTS */
 
@@ -526,7 +518,6 @@
   }
 
   a.status-link:hover {
-    /* color: #ffa888; */
     color: #cab8ff;
   }
 
@@ -536,7 +527,6 @@
   }
 
   a.column-link:hover i {
-    /* color: var(--pastel-orange); */
     color: #cab8ff;
   }
 
@@ -582,9 +572,50 @@
       );
   }
 
-
   .notification__filter-bar button {
     font-size: 16px;
   }
 
+  /* compose button tweaks */
+  @supports selector(:has(a, b)) {
+    /* default button */
+    .compose-form__publish-button-wrapper > button {
+      text-indent: -9999px;
+      line-height: 0; /* collapse it fully. */
+    }
+
+    .compose-form__publish-button-wrapper > button > span > i {
+      text-indent: -9999px;
+      line-height: 0; /* collapse it fully. */
+    }
+
+    /* Change the default text to be Toot! */
+    .compose-form__publish-button-wrapper > button::after {
+      content: 'Toot!';
+      display: block;
+      text-indent: 0;
+      line-height: initial;
+    }
+
+    .compose-form__buttons-wrapper:has(i[class*='fa-at'])
+      + .compose-form__publish
+      > .compose-form__publish-button-wrapper
+      > button::after {
+      content: 'Direct Toot!';
+    }
+
+    .compose-form__buttons-wrapper:has(i[class*='fa-lock'])
+      + .compose-form__publish
+      > .compose-form__publish-button-wrapper
+      > button::after {
+      content: 'Locked Toot!';
+    }
+
+    .compose-form__buttons-wrapper:has(i[class*='fa-unlock'])
+      + .compose-form__publish
+      > .compose-form__publish-button-wrapper
+      > button::after {
+      content: 'Unlisted Toot!';
+    }
+  }
 }
