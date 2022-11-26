@@ -274,7 +274,8 @@
   .notification__message,
   .reactions-bar__item__count,
   .status-card__title,
-  .trends__item__name a {
+  .trends__item__name a
+   {
     /* medium */
     color: var(--theme-text-lighter);
   }
@@ -367,6 +368,10 @@
     color: var(--theme-accent-lighter);
   }
 
+  .status__content__read-more-button {
+    color: var(--theme-accent-lighter);
+  }
+
   .column-header.active .column-header__icon {
     text-shadow: 0 0 10px var(--theme-semi-transparent-accent);
   }
@@ -417,9 +422,9 @@
     border-color: var(--theme-link-color);
   }
 
-  .reply-indicator__content p:last-child,
   .status__content p:last-child {
     /* handle thin last line */
+    margin-bottom: 2px;
   }
 
   .column-header button,
