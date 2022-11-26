@@ -201,13 +201,10 @@
     background: var(--theme-accent-lightest);
   }
 
-  .dropdown-menu {
-    background: burlywood;
-  }
-
+  .dropdown-menu,
   .dropdown-menu__item a,
   .dropdown-menu__item button {
-    background: burlywood;
+    background: var(--theme-neutral-bright);
   }
 
   .notification__filter-bar {
