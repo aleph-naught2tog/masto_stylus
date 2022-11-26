@@ -8,109 +8,14 @@
 ==/UserStyle== */
 
 @-moz-document domain("tech.lgbt") {
-  :root {
-    --pastel-red: #ff7878;
-    --pasted-red-orange: #ffa888;
-    --pastel-orange: #ffc898;
-    --pastel-yellow: #fff89a;
-    --pastel-rainbow-gradient: linear-gradient(
-      to right,
-      var(--pastel-red),
-      var(--pastel-orange),
-      var(--pastel-yellow),
-      #cdf2ca,
-      #a2cdcd,
-      #d1e8e4,
-      #cab8ff
-    );
-
-    /*
-      USER THEMEING
-    */
-    /* hsl(0, 100%, 74%) */
-    --accent_hue: 0deg;
-    --accent_sat: 100%;
-    --accent_light: 73%;
-
-    --theme-accent-lightest: hsl(var(--accent_hue), var(--accent_sat), 90%);
-    --theme-semi-transparent-accent: hsla(
-      var(--accent_hue),
-      var(--accent_sat),
-      var(--accent_light),
-      0.3
-    );
-    --theme-accent-lighter: hsl(
-      var(--accent_hue),
-      var(--accent_sat),
-      calc(var(--accent_light) + 10%)
-    );
-    --theme-accent-medium: hsl(
-      var(--accent_hue),
-      var(--accent_sat),
-      calc(var(--accent_light) + 5%)
-    );
-    --theme-accent: hsl(
-      var(--accent_hue),
-      var(--accent_sat),
-      var(--accent_light)
-    );
-    --theme-accent-inactive: hsl(
-      var(--accent_hue),
-      var(--accent_sat),
-      calc(var(--accent_light) - 5%)
-    );
-
-    --theme-neutral-darkest: hsl(280, 15%, 12%);
-    --theme-neutral-ultra-dark: hsl(240, 15%, 15%);
-    --theme-neutral-darker: hsl(240, 16%, 19%);
-    --theme-neutral-dark: hsl(240, 16%, 21%);
-    --theme-neutral-grim: hsl(300, 16%, 23%);
-    --theme-neutral-bright: hsl(0, 0%, 92%);
-    --theme-neutral-brightest: hsl(0, 0%, 100%);
-
-    /*
-      this is for setting the boost button color. The "boost target hue" would
-      usually be the HUE value of your `theme-accent` color.
-    */
-    --masto-base-hue: 239deg;
-    --boost-target-hue: var(--accent_hue);
-
-    --theme-radio-button: var(--theme-accent-medium);
-    --theme-link-color: var(--theme-accent-lighter);
-
-    --theme-font-color-fallback: #fff;
-
-    --theme-page-background: var(--theme-neutral-darkest);
-    --theme-center-column-header-background: var(--theme-neutral-grim);
-    --theme-search-input-background: var(--theme-neutral-darker);
-    /* The timeline background matches the search input background in the standard UI */
-    --theme-timeline-background: var(--theme-neutral-darker);
-    --theme-timeline-hover: var(--theme-neutral-dark);
-    --theme-compose-background: var(--theme-neutral-brightest);
-    --theme-compose-tools-background: var(--theme-neutral-bright);
-
-    --theme-reply-indicator-background: hsl(215, 29%, 70%);
-
-    /*
-      Default text colors
-
-    --theme-text-black: black;
-    --theme-text-light: hsl(208, 25%, 88%);
-    --theme-text-lighter: hsl(216, 28%, 90%);
-    --theme-text-lightest: hsl(210, 27%, 94%);
-    --theme-text-white: white;
-  */
-
-    --theme-text-black: hsl(28, 15%, 13%);
-    --theme-text-light: hsl(28, 15%, 89%);
-    --theme-text-lighter: hsl(28, 15%, 92%);
-    --theme-text-lightest: hsl(28, 15%, 95%);
-    --theme-text-white: whitesmoke;
-  }
-
   /*
   ------------------- MAX STYLES -------------------
   */
+
+  .loading-bar {
+    background: var(--pastel-rainbow-gradient);
+  }
+
 
   /*
     overriding width above
