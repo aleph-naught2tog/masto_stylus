@@ -432,6 +432,10 @@
     border-color: var(--theme-link-color);
   }
 
+  .reply-indicator__content p:last-child, .status__content p:last-child {
+    /* handle thin last line */
+  }
+
   .column-header button,
   .block-modal__cancel-button,
   .confirmation-modal__cancel-button,
