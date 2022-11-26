@@ -580,27 +580,30 @@
   @supports selector(:has(a, b)) {
     /* default button */
     .compose-form__publish-button-wrapper > button {
-      text-indent: -9999px;
-      line-height: 0; /* collapse it fully. */
+      font-size: 0;
+      line-height: 0;
     }
 
     .compose-form__publish-button-wrapper > button > span > i {
-      text-indent: -9999px;
-      line-height: 0; /* collapse it fully. */
+      font-size: initial;
+      line-height: initial;
+      padding-right: 1ex;
     }
 
     /* Change the default text to be Toot! */
     .compose-form__publish-button-wrapper > button::after {
       content: 'Toot!';
-      display: block;
-      text-indent: 0;
+      display: inline-block;
+      font-size: initial;
       line-height: initial;
     }
 
+    /* TODO: is there a way to do this without the `has`? */
     .compose-form__buttons-wrapper:has(i[class*='fa-at'])
       + .compose-form__publish
       > .compose-form__publish-button-wrapper
       > button::after {
+      /* internal icon: fa-lock */
       content: 'Direct Toot!';
     }
 
@@ -608,6 +611,7 @@
       + .compose-form__publish
       > .compose-form__publish-button-wrapper
       > button::after {
+      /* internal icon: fa-lock */
       content: 'Locked Toot!';
     }
 
@@ -615,6 +619,7 @@
       + .compose-form__publish
       > .compose-form__publish-button-wrapper
       > button::after {
+      /* internal icon: none */
       content: 'Unlisted Toot!';
     }
   }
