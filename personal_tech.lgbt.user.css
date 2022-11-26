@@ -111,8 +111,8 @@
     font-size: 16px;
   }
 
-  /* compose button tweaks */
   @supports selector(:has(a, b)) {
+    /* ==== COMPOSE BUTTON TWEAKS ==== */
     /* default button */
     .compose-form__publish-button-wrapper > button {
       font-size: 0;
@@ -157,5 +157,10 @@
       /* internal icon: none */
       content: 'Unlisted Toot!';
     }
+  }
+
+  /* ==== CONTENT WARNING TWEAKS ===== */
+  .status__content--with-spoiler {
+
   }
 }
